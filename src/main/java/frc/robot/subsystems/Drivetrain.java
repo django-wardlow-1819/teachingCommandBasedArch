@@ -12,12 +12,15 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 
+
 /**
  * Add your docs here.
  */
 public class Drivetrain extends SubsystemBase {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+
+  // Subsystem used to hide complicated stuff like hardware from rest of the code
 
   public CANSparkMax leftMotor1, rightMotor1, leftMotor2, rightMotor2, leftMotor3, rightMotor3;
   // This will set up the motors
@@ -56,3 +59,5 @@ public class Drivetrain extends SubsystemBase {
   }
   
 }
+
+// Setting up a default command, you call exampleSubsystem.setDefaultCommand(exampleCommand);
