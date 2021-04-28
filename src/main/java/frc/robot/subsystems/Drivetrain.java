@@ -27,6 +27,7 @@ public class Drivetrain extends SubsystemBase {
 
 
   public Drivetrain(){
+    System.out.println("make drivetrain crap");
     leftMotor1 = new CANSparkMax(30, MotorType.kBrushless);
     rightMotor1 = new CANSparkMax(20, MotorType.kBrushless);
     leftMotor2 = new CANSparkMax(31, MotorType.kBrushless);
@@ -39,17 +40,22 @@ public class Drivetrain extends SubsystemBase {
     leftMotor3.follow(leftMotor1);
     rightMotor2.follow(rightMotor1);
     rightMotor3.follow(rightMotor1);
+
+    leftMotor1.setInverted(true);
+    rightMotor1.setInverted(false);
     // This will make the all of the left motors follow leftMotor1 and the same with the right
     // Basically makes leftMotor1 leader of the leftMotors
   }
 
   public void setLeftPower(double power) {
     leftMotor1.set(power);
+    System.out.println("Left works" + power);
     // This makes it drive
   }
 
   public void setRightPower(double power) {
     rightMotor1.set(power);
+    System.out.println("Right works" + power);
     // This makes it drive
   }
   public void stop() {

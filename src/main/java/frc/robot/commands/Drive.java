@@ -4,6 +4,8 @@
 
 package frc.robot.commands;
 
+import frc.robot.subsystems.Drivetrain;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.XboxController;
@@ -16,10 +18,10 @@ public class Drive extends CommandBase {
   Drivetrain Drive;
   XboxController NewController;
   public Drive(Drivetrain mainDrive, XboxController Controller) {
-    addRequirements(Drive);
     // Makes it so Drive needs to be working before ????
     // Use addRequirements() here to declare subsystem dependencies.
     Drive = mainDrive;
+    addRequirements(Drive);
     NewController = Controller;
 
   }
@@ -28,6 +30,7 @@ public class Drive extends CommandBase {
   @Override
   public void initialize() {
     Drive.stop();
+    System.out.println("start Command");
     // Makes it stop
   }
 
@@ -48,6 +51,7 @@ public class Drive extends CommandBase {
 
   @Override
   public void end(boolean interrupted) {
+    System.out.println("End Command");
     Drive.stop();
     // Makes it stop
     // Called once the command ends or is interrupted.
@@ -56,6 +60,7 @@ public class Drive extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
+    System.out.println("end command but i understand less");
     return false;
   }
 }
